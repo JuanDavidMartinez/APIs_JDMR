@@ -12,7 +12,7 @@ conn = psycopg2.connect(DATABASE_URL)
 
 @app.get("/")
 def read_root():
-    return {"message": "API conectada a PostgreSQL en Neon 🚀"}
+    return {"message": "API conectada a PostgreSQL en Neon 3 🚀"}
 
 @app.get("/users")
 def get_users():
@@ -20,4 +20,5 @@ def get_users():
     cur.execute("SELECT id, name FROM users;")  # asume que existe tabla users
     rows = cur.fetchall()
     cur.close()
+
     return {"users": rows}
